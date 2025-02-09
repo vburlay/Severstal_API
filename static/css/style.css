@@ -1,0 +1,316 @@
+/** ==========================================
+Web app Severstal
+style.css
+Central stylesheet for importing the modules
+is integrated into the HTML files via <link
+Date: style.css
+Date: 01/30/2025
+Autor: V.Burlay
+======================================= */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    --linkfarbe-active: #50a;
+    --linkfarbe-visited: #05a;
+    --whitesmoke-color: whitesmoke;
+    --white-color: white;
+    --floralwhite-color: floralwhite;
+    --schattenfarbe: rgb(51, 51, 51, 0.3);
+}
+
+
+
+body {
+    background-color: white;
+    min-width: 320px;
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+}
+
+#Vis {
+    margin-left: 1rem;
+}
+
+/* stylesheet for Severstal competition */
+.site-nav li {
+    flex: 1;
+    max-width: 7rem;
+    border-right: 1px solid white;
+}
+
+.dwl {
+    padding: 2.5rem;
+    margin: 0;
+}
+
+/*.site-nav li:first-child {
+    border-left: 1px solid white;}*/
+
+.site-nav a {
+    display: block;
+    color: var(--white-color);
+    text-align: center;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.site-nav [aria-current] a {
+    background: #07b;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+    text-decoration-thickness: 1px;
+}
+
+.dl {
+    padding: 2.5rem;
+}
+
+form {
+    padding: 2.5rem;
+}
+
+label {
+    cursor: pointer;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+ins {
+    text-decoration: none;
+    background-color: lightgoldenrodyellow;
+}
+
+details {
+    background-color: var(--whitesmoke-color);
+    padding: 1rem;
+    border: 1px solid lightgray;
+    margin-bottom: 1rem;
+    border-radius: 2rem;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.infoboxen {
+    background-color: var(--whitesmoke-color);
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+}
+
+.infobox {
+    background-color: var(--white-color);
+    padding: 1rem;
+    margin: 1rem;
+    border: 2px solid lightgray;
+    border-radius: 2rem;
+    border-left: 5px solid steelblue;
+    box-shadow: 4px 4px 10px rgb(0, 0, 0, 0.5)
+}
+
+/* Sehr wichtig*/
+.site-content {
+    line-height: 1.5;
+}
+
+/* Sehr wichtig*/
+#index1 {
+    padding-top: 0.5rem;
+}
+
+#index2, #index3, #index4, #index5 {
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    text-align: center;
+}
+
+#index21, #index31, #index41, #index51 {
+    text-align: center;
+}
+
+.toolslisten {
+    background-color: var(--floralwhite-color);
+    border: 1px solid silver;
+    padding: 2rem;
+}
+
+
+.tools {
+    background-color: var(--whitesmoke-color);
+    padding: 1rem;
+    color: black;
+}
+
+.startseite {
+    background-color: var(--floralwhite-color);
+    color: black;
+}
+
+.site-header {
+    background-color: steelblue;
+    color: var(--white-color);
+    padding: 0.5rem;
+
+}
+
+.site-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-nav {
+    background-color: chocolate;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 6px var(--schattenfarbe);
+
+}
+
+.site-nav a {
+    color: whitesmoke;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    padding: 0.5rem;
+}
+
+/* Sanftes Scrollen aktivieren */
+
+.site-footer {
+    background-color: steelblue;
+    color: white;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.site-footer a {
+    color: var(--whitesmoke-color);
+    text-decoration: none;
+}
+
+header h2 {
+    margin-bottom: 0;
+}
+
+header img {
+    margin-bottom: 0;
+    margin-right: 1rem;
+}
+
+.content-intro {
+    border: 2px solid silver;
+    padding: 2rem;
+    background-color: var(--floralwhite-color);
+    box-shadow: 4px 4px 10px rgb(0, 0, 0, 0.3);
+    border-radius: 2rem;
+}
+
+
+.kontaktdaten {
+    border: 1px solid silver;
+    padding: 2rem;
+    margin-right: 20rem;
+    margin-left: 20rem;
+    text-align: center;
+    box-shadow: 4px 4px 10px rgb(0, 0, 0, 0.3);
+    border-radius: 2rem;
+    background-color: var(--floralwhite-color);
+}
+
+.site-header {
+    margin-bottom: 1rem
+}
+
+.site-nav {
+    margin-bottom: 2rem
+}
+
+.site-content {
+    margin-bottom: 2rem
+}
+
+.site-content a:link {
+    color: var(--linkfarbe-active);
+}
+
+.site-content a:visited {
+    color: var(--linkfarbe-visited);
+}
+
+.site-content a:hover, .site-content a:focus {
+    color: var(--linkfarbe-active);
+}
+
+.site-content a:active {
+    color: var(--linkfarbe-visited);
+}
+
+.site-content a[target="_blank"]:after {
+    content: "\00A0\2197";
+}
+
+.kontaktdaten > h3 {
+    text-shadow: 4px 4px 4px rgba(170, 170, 170, 0.5)
+}
+
+.content-intro > h2 {
+    text-shadow: 4px 4px 4px rgba(170, 170, 170, 0.5)
+}
+
+.toolslisten > h2 {
+    text-shadow: 4px 4px 4px rgba(170, 170, 170, 0.5)
+}
+
+#content > h2 {
+    text-shadow: 4px 4px 4px rgba(170, 170, 170, 0.5)
+}
+
+/* Collapsing Margins vermeiden*/
+/*h1, h2,h3,h4,h5,h6,p,ul,ol,blockquote{
+    margin-top: 0;
+}*/
+.site-footer > a {
+    font-size: 1rem;
+}
+
+.inside_tools {
+    background-color: var(--whitesmoke-color);
+    padding: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.infobox_tools {
+    background-color: var(--white-color);
+}
+
+
+@media screen and (min-width: 800px) {
+    .infoboxen_tools > .inside_tools {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
+
+@supports (grid-area: auto) {
+    .inside {
+        max-width: 960px;
+    }
+}
+
