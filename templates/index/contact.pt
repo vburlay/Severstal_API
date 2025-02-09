@@ -1,0 +1,52 @@
+<div metal:use-macro="load: ../shared/_layout.pt">
+    <div metal:fill-slot="content" tal:omit-tag="True">
+    <div>Welcome, ${welcome}</div>
+        <nav class="site-nav" aria-label="Haupt">
+            <ul>
+                <li><a href="/"><strong>Start
+                    page</strong></a></li>
+                <li><a
+                        href="/tools"><strong>Functionality</strong></a></li>
+                <li><a
+                        href="/statistic"><strong>Statistic</strong></a></li>
+                <li><a href="/description"><strong>Description</strong></a>
+                </li>
+                <li aria-current="page"><a
+                        href="contact.pt"><strong>Contact</strong></a></li>
+            </ul>
+        </nav>
+        <main class="site-content" id="content">
+            <p style="font-size: 1.3rem; padding-left: 1rem  ">&nbsp;Questions?
+                Suggestions?
+                On this
+                page you
+                will
+                find
+                ways
+                to get in
+                touch with us.</p>
+            <section class="kontaktdaten">
+                <h3>Contact details</h3>
+                <address>
+                    <p>Vladimir Burlay <br>
+                        Weierstr. 14 <br>
+                        50354 Huerth </p>
+                    <p>Tel.: +49 17626014613</p>
+
+                    <p>Website:&nbsp;<a style="text-decoration-thickness: 1px;
+                                  text-underline-offset: 0.15em "
+                                        href="http://vburlay.github.io"
+                                        target="_blank"
+                                        rel="noreferrer noopener">Link
+                    </a></p>
+
+                </address>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+

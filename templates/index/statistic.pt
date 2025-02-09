@@ -1,0 +1,23 @@
+<div metal:use-macro="load: ../shared/_layout.pt">
+    <div metal:fill-slot="content" tal:omit-tag="True">
+    <div>Welcome, ${welcome}</div>
+        <nav class="site-nav" aria-label="Haupt">
+            <ul>
+                <li><a href="/"><strong>Start
+                    page</strong></a></li>
+                <li><a
+                        href="/tools"><strong>Functionality</strong></a></li>
+                <li aria-current="page"><a
+                        href="statistic.pt"><strong>Statistic</strong></a></li>
+                <li><a href="/description"><strong>Description</strong></a>
+                </li>
+                <li><a href="/contact"><strong>Contact</strong></a></li>
+            </ul>
+        </nav>
+        <main class="site-content" id="content">
+            <h2 id="Vis">Visualization</h2>
+
+        </main>
+
+    </div>
+</div>

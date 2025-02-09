@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de" id="top">
+<head>
+    <meta charset="UTF-8">
+    <title>Start site - Severstal</title>
+    <link rel="stylesheet" href="/static/css/style.css"/>
+    <style>
+        html {
+            background-image: url(/static/bilder/6707.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: scroll;
+            background-size: auto
+        }
+
+    </style>
+</head>
+<body class="startseite">
+<!-- Kopfbereich der Webseite -->
+<header class="site-header">
+    <h1>Steel Defect Detection
+        <a href="/">
+            <img style="float:right"
+                 src="../../static/bilder/CHMF.ME_BIG.png"
+                 alt="Severstal: Steel Defect Detection"
+                 width="280"
+                 height="85"></a></h1>
+    <h2>Competition(www.kaggle.com)</h2>
+
+</header>
+
+<div class="main-content">
+    <div metal:define-slot="content" tal:omit-tag="True">No content</div>
+</div>
+
+<footer class="site-footer">
+    <a href="#top">To the top</a>
+    <small style="float:right">Copyright &copy;
+        <time datetime="2025">2025</time>
+    </small>
+</footer>
+</body>
+</html>

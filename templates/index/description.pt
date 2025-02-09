@@ -1,0 +1,70 @@
+<div metal:use-macro="load: ../shared/_layout.pt">
+    <div metal:fill-slot="content" tal:omit-tag="True">
+    <div>Welcome, ${welcome}</div>
+        <nav class="site-nav" aria-label="Haupt">
+            <ul>
+                <li><a href="/"><strong>Start
+                    page</strong></a></li>
+                <li><a href="/tools"><strong>Functionality</strong></a></li>
+                <li><a href="/statistic"><strong>Statistic</strong></a></li>
+                <li aria-current="page"><a href="description.pt"><strong>Description</strong></a>
+                </li>
+                <li><a href="/contact"><strong>Contact</strong></a></li>
+            </ul>
+        </nav>
+<main class="site-content" id="content">
+    <div class="container">
+
+        <section class="content-intro">
+
+            <div class="infobox_d">
+                <p>Steel is one of the most important building materials of our
+                    time.
+                    Steel buildings are resistant to natural and artificial
+                    wear
+                    and
+                    which has made this material ubiquitous throughout the
+                    world.
+                    To improve the efficiency of steel production, this program
+                    will
+                    help to
+                    identify defects.</p>
+                <p>In this program was used an algorithm by
+                    <strong><em>localizing</em></strong>
+                    and <strong><em>classifying</em></strong> surface defects
+                    on a
+                    steel
+                    plate.</p>
+                <details open>
+                    <summary>Dataset Description:</summary>
+                    <ul>
+                        <li id="index1">Defects must be segmented and
+                            classified
+                            in the
+                            test
+                            set.
+                        </li>
+                        <li>Each image may have no defects, a defect of a
+                            single
+                            class,
+                            or
+                            defects of multiple classes.
+                        </li>
+                        <li>For each image must be segment defects of each
+                            class
+                            (ClassId =
+                            [1, 2, 3, 4]).
+                        </li>
+                    </ul>
+                </details>
+                <p>You can find more details <a
+                        href="https://www.kaggle.com/competitions/severstal-steel-defect-detection/overview"
+                        target="_blank" rel="noreferrer noopener">here</a></p>
+            </div>
+        </section>
+    </div>
+
+</main>
+</div>
+</div>
+

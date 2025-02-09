@@ -1,0 +1,85 @@
+<div metal:use-macro="load: ../shared/_layout.pt">
+    <div metal:fill-slot="content" tal:omit-tag="True">
+        <div>Welcome, ${welcome}</div>
+        <nav class="site-nav" aria-label="Haupt">
+            <ul>
+                <li aria-current="page"><a href="index.pt"><strong>Start
+                    page</strong></a></li>
+                <li><a href="/tools"><strong>Functionality</strong></a></li>
+                <li><a href="/statistic"><strong>Statistic</strong></a></li>
+                <li><a href="/description"><strong>Description</strong></a>
+                </li>
+                <li><a href="/contact"><strong>Contact</strong></a></li>
+            </ul>
+        </nav>
+        <!-- Inhaltsbereich -->
+        <main class="site-content" id="content">
+
+            <section class="content-intro">
+
+                <h2>Welcome</h2>
+
+                <p>To improve the efficiency of steel production, this program
+                    will help engineers
+                    automate the process of locating and classifying surface
+                    defects on steel plate.</p>
+                <p>This program uses the following algorithms: </p>
+                <ul>
+                    <li>Classification (binary ResNet50-model).</li>
+                    <li>Segmentation (U-Net).</li>
+                </ul>
+
+            </section>
+
+            <section style="padding-right: 15rem" class="infoboxen">
+
+                <h2>The areas of the website</h2>
+
+                <article class="infobox">
+                    <details>
+                        <summary>Functionality</summary>
+                        <p id="index2">Here you can check the surface of the
+                            steel for defects.</p>
+                        <p id="index21"><a href="/tools">To
+                            Functionality</a></p>
+                    </details>
+                </article>
+
+
+                <article class="infobox">
+                    <details>
+                        <summary>Description</summary>
+                        <p id="index3">Here is a detailed description of the
+                            task.</p>
+                        <p id="index31"><a href="/description">To
+                            description</a></p>
+                    </details>
+                </article>
+
+
+                <article class="infobox">
+                    <details>
+                        <summary>Statistic</summary>
+                        <p id="index4">Descriptive statics shows how much
+                            details relates to each defect class.</p>
+                        <p id="index41"><a href="/statistic">To
+                            statistic</a></p>
+                    </details>
+                </article>
+
+                <article class="infobox">
+                    <details>
+                        <summary>Contact</summary>
+                        <p id="index5">Here you can find the contact
+                            information of the author.</p>
+                        <p id="index51"><a href="/contact">To statistic</a>
+                        </p>
+                    </details>
+                </article>
+
+            </section>
+        </main>
+    </div>
+
+</div>
+
