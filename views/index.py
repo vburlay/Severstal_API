@@ -38,3 +38,4 @@ def contact(welcome:str = 'here you will find contact'):
     return {
         'welcome': welcome
     }
+
