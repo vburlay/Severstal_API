@@ -15,32 +15,19 @@
         </nav>
         <!-- Inhaltsbereich -->
         <main class="site-content" id="content">
-
             <section class="infoboxen_tools">
                 <div class="inside_tools">
-                    <article class="infobox_tools">
-                        <h3>Download files</h3>
-                        <p>The data can be downloaded here.</p>
-                        <button type="submit">Download</button>
-                    </article>
+                    <div class="infobox_tools" tal:repeat="p functions">
+                        <div class="title">
+                            <a href="/function/${p.id}">${p.id}</a>
+                        </div>
+                        <div class="infobox_tools">
+                                ${p.summary}
+                        </div>
 
-                    <article class="infobox_tools">
-                        <h3>Defect ?</h3>
-                        <p>Check whether the details are defective.</p>
-                        <button type="submit">Validation</button>
-                    </article>
-
-                    <article class="infobox_tools">
-                        <h3>Localization</h3>
-                        <p>Check where selected details are located</p>
-                        <button type="submit">Validation</button>
-                    </article>
-
+                    </div>
                 </div>
-
-
             </section>
-
         </main>
     </div>
 
