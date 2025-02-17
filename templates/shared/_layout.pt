@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Start site - Severstal</title>
-    <link rel="stylesheet" href="/static/css/style.css"/>
+    <link rel="stylesheet" href="/static/css/style.css?version1"/>
     <style>
         html {
             background-image: url(/static/bilder/6707.jpg);
