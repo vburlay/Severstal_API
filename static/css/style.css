@@ -10,6 +10,7 @@ Autor: V.Burlay
 *, *::before, *::after {
     box-sizing: border-box;
 }
+
 html {
     scroll-behavior: smooth;
     --linkfarbe-active: #50a;
@@ -290,20 +291,19 @@ header img {
 .inside_tools {
     background-color: var(--whitesmoke-color);
     padding: 1rem;
-    margin-right: auto;
-    margin-left: auto;
+/*    margin-right: auto;
+    margin-left: auto;*/
 }
 
 .infobox_tools {
     background-color: var(--white-color);
 }
 
-
 @media screen and (min-width: 800px) {
     .infoboxen_tools > .inside_tools {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 0.5rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
         text-align: center;
     }
 }
