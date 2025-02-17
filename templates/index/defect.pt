@@ -1,6 +1,6 @@
 <div metal:use-macro="load: ../shared/_layout.pt">
     <div metal:fill-slot="content" tal:omit-tag="True">
-        <div>Welcome, ${welcome}</div>
+    <div>Welcome, ${welcome}</div>
         <nav class="site-nav" aria-label="Haupt">
             <ul>
                 <li><a href="/"><strong>Start
@@ -13,24 +13,10 @@
                 <li><a href="/contact"><strong>Contact</strong></a></li>
             </ul>
         </nav>
-        <!-- Inhaltsbereich -->
         <main class="site-content" id="content">
-            <section class="infoboxen_tools">
-                <div class="inside_tools">
-                    <div class="infobox_tools" tal:repeat="p functions">
-                        <div class="title">
-                            <a href="/${p.id}">${p.id}</a>
-                        </div>
-                        <div class="infobox_tools">
-                                ${p.summary}
-                        </div>
+            <h2 id="Vis">Defects</h2>
 
-                    </div>
-                </div>
-            </section>
         </main>
+
     </div>
-
 </div>
-
-
