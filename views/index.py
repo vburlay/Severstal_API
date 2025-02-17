@@ -6,36 +6,45 @@ router = fastapi.APIRouter()
 
 @router.get("/")
 @template()
-def index(welcome:str = 'here you will find general information'):
+def index(welcome: str = 'here you will find general information'):
     return {
         'welcome': welcome
     }
+
 
 @router.get("/tools")
 @template()
-def tools(welcome:str = 'here you will find functionality'):
+def tools(welcome: str = 'here you will find functionality'):
     return {
-        'welcome': welcome
+        'welcome': welcome,
+        'functions': [
+            {'id': 'Defect ?', 'summary': 'Check whether the details are '
+                                          'defective.'},
+            {'id': 'Localization',
+             'summary': 'Check where selected details are located'}
+        ]
     }
+
 
 @router.get("/description")
 @template()
-def description(welcome:str = 'here you will find general description'):
+def description(welcome: str = 'here you will find general description'):
     return {
         'welcome': welcome
     }
+
 
 @router.get("/statistic")
 @template()
-def statistic(welcome:str = 'here you will find statistic'):
+def statistic(welcome: str = 'here you will find statistic'):
     return {
         'welcome': welcome
     }
+
 
 @router.get("/contact")
 @template()
-def contact(welcome:str = 'here you will find contact'):
+def contact(welcome: str = 'here you will find contact'):
     return {
         'welcome': welcome
     }
-
