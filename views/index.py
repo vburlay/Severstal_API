@@ -1,5 +1,8 @@
 from fastapi_chameleon import template
 import fastapi
+from starlette.requests import Request
+from viewmodels.classification.defect import IndexViewModel
+#from viewmodels.shared.viewmodel import ViewModelBase
 router = fastapi.APIRouter()
 @router.get("/")
 @router.get("/index.pt")
@@ -36,10 +39,21 @@ def contact(welcome: str = 'here you will find contact'):
     return {'welcome': welcome }
 @router.get("/Defect")
 @template()
-def defect(welcome: str = 'here you will find defect'):
-    return { 'welcome': welcome }
+
+def defect(request:Request):
+    vm = IndexViewModel(request)
+    return vm.to_dict()
+
 
 @router.get("/Localization")
 @template()
 def localization(welcome: str = 'here you will find localization'):
     return {'welcome': welcome }
+
+# @router.get("/{id}")
+# @template()
+#
+# def localization(request:Request):
+#     vm = IndexViewModel(request)
+#     return vm.to_dict()
+
