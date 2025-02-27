@@ -9,6 +9,8 @@ class defect:
     def __init__(self, maintainers: list = None):
         self.score= list()
         self.id = list()
+        self.file_stat = os.path.join(Path(os.getcwd()).parent.absolute(),
+                                      'Severstal_API','stat_class.csv')
         self.file_count = len(os.listdir(os.path.join(
             Path(Path(os.getcwd()).parent.absolute(), 'Severstal_API/data'))))
         self.base_dir = os.path.join(
@@ -56,6 +58,5 @@ class defect:
                 self.score.append(np.round(klass[0][0], 2))
                 self.id.append(os.listdir(self.base_dir)[self.file_count - i])
         stat_class = {"id": self.id,"score": self.score}
-        pd.DataFrame(stat_class).to_csv(os.path.join(self.base_dir,
-                                                     'stat_class.csv'))
+        pd.DataFrame(stat_class).to_csv(self.file_stat)
         return self.maintainers
