@@ -3,10 +3,12 @@ import numpy as np
 from keras._tf_keras.keras.preprocessing.image import img_to_array
 from pathlib import Path
 import os
+import pandas as pd
 
 class defect:
     def __init__(self, maintainers: list = None):
-
+        self.score= list()
+        self.id = list()
         self.file_count = len(os.listdir(os.path.join(
             Path(Path(os.getcwd()).parent.absolute(), 'Severstal_API/data'))))
         self.base_dir = os.path.join(
@@ -17,9 +19,7 @@ class defect:
         if maintainers is None:
             maintainers = list()
         self.maintainers = maintainers
-        self.base_dir = os.path.join(Path(Path(os.getcwd()).parent.absolute(
-
-        ), 'Severstal_API/data'))
+        self.base_dir = os.path.join(Path(Path(os.getcwd()).parent.absolute(), 'Severstal_API/data'))
         self.model = keras.models.load_model(self.model_path)
 
     @property
@@ -44,6 +44,8 @@ class defect:
                         'summary': "Detail is norm: " + str(np.round(klass[0],
                                                                      2))}
                 self.maintainers.append(case)
+                self.score.append(np.round(klass[0][0],2))
+                self.id.append(os.listdir(self.base_dir)[self.file_count - i])
             else:
                 case = {'id': os.listdir(self.base_dir)[self.file_count -
                                                         i],
@@ -51,4 +53,9 @@ class defect:
                             self.base_dir)[self.file_count - i]), 'summary':
                             "Detail is defect: " + str(np.round(klass[0], 2))}
                 self.maintainers.append(case)
+                self.score.append(np.round(klass[0][0], 2))
+                self.id.append(os.listdir(self.base_dir)[self.file_count - i])
+        stat_class = {"id": self.id,"score": self.score}
+        pd.DataFrame(stat_class).to_csv(os.path.join(self.base_dir,
+                                                     'stat_class.csv'))
         return self.maintainers
