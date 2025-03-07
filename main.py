@@ -23,6 +23,7 @@ def configure_templates():
 def configure_routes():
     app.mount("/static", StaticFiles(directory="static"), name="static")
     app.mount("/data", StaticFiles(directory="data"), name="data")
+
     app.include_router(index.router)
 
 
