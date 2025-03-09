@@ -58,7 +58,6 @@ def statistic(welcome: str = 'here you will find statistic'):
 
     return {'welcome': welcome}
 
-
 @router.get("/contact")
 @router.get("/contact.pt")
 @template()

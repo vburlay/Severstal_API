@@ -1,6 +1,6 @@
 <div metal:use-macro="load: ../shared/_layout.pt">
     <div metal:fill-slot="content" tal:omit-tag="True">
-    <div>Welcome, ${welcome}</div>
+        <div>Welcome, ${welcome}</div>
         <nav class="site-nav" aria-label="Haupt">
             <ul>
                 <li><a href="/"><strong>Start
@@ -14,10 +14,12 @@
             </ul>
         </nav>
         <main class="site-content" id="content">
-            <h2 id="Vis">Localization</h2>
 
-
-
+            <img style="float:initial"
+                 src=${localization}
+                 alt="localization"
+                 width="1000"
+                 height="1700">
 
 
         </main>
