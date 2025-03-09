@@ -1,27 +1,21 @@
-from keras._tf_keras.keras.preprocessing.image import ImageDataGenerator
-from keras._tf_keras.keras.applications.resnet50 import preprocess_input
 import keras._tf_keras.keras
 from dataclasses import dataclass
 import os
 import numpy as np
 import PIL.Image as Image
-import pandas as pd
 
 @dataclass
 class G:
-    BACKBONE = "resnet50"
     path = os.path.join(os.getcwd(), "data/")
-
 
 class DataGenerator(keras.utils.Sequence):
     def __init__(
-            self, df, batch_size=16, subset="train", shuffle=False,
+            self, df, batch_size=16,  shuffle=False,
             preprocess=None, info={}
     ):
         super().__init__()
         self.df = df
         self.shuffle = shuffle
-        self.subset = subset
         self.batch_size = batch_size
         self.preprocess = preprocess
         self.info = info
