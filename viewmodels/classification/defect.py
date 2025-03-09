@@ -3,7 +3,7 @@ from services import classification_service
 from viewmodels.shared.viewmodel import ViewModelBase
 from starlette.requests import Request
 
-class IndexViewModel(ViewModelBase):
+class IndexViewModel_c(ViewModelBase):
     def __init__(self, request: Request):
         super().__init__(request)
         self.classification: List = classification_service.defect_image(
