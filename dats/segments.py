@@ -38,7 +38,7 @@ class localization:
         test = pd.read_csv(os.path.join(Path(os.getcwd()).parent.absolute(),
                                         'Severstal_API/sample_submission.csv'))
 
-        batches = DataGenerator(test, subset='prod')
+        batches = DataGenerator(test)
         preds = model.predict(batches, steps=2, verbose=2)
 
         for i, batch in enumerate(batches):
