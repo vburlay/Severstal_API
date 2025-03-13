@@ -4,20 +4,14 @@ from starlette.requests import Request
 from viewmodels.classification.defect import IndexViewModel_c
 from viewmodels.localization.segmentation import IndexViewModel_l
 
-from fastapi import HTTPException
 from fastapi.responses import HTMLResponse
 import plotly.express as px
 from plotly.io import to_html
-import seaborn as sns
 import pandas as pd
 import os
 from pathlib import Path
 
 router = fastapi.APIRouter()
-
-# df = pd.read_csv(os.path.join(Path(os.getcwd()).parent.absolute(),
-#                                    'Severstal_API', 'stat_loc.csv'),sep=",")
-# survival_rate = df.groupby(['defect']).count().reset_index()
 
 
 @router.get("/")
@@ -49,14 +43,29 @@ def description(welcome: str = 'here you will find general description'):
     return {'welcome': welcome}
 
 
-@router.get("/statistic")
-@router.get("/statistic.pt")
+@router.get("/statistic", response_class=HTMLResponse)
+@router.get("/statistic.pt", response_class=HTMLResponse)
 @template()
-def statistic(welcome: str = 'here you will find statistic'):
-    # fig = px.bar(survival_rate, x='defect', y='count',
-    #              title='Count of defects')
+async def surival_rate_plotly():
+    df = pd.read_csv(os.path.join(Path(os.getcwd()).parent.absolute(),
+                                  'Severstal_API', 'stat_loc.csv'), sep=",")
+    survival_rate = df.groupby(['defect']).count().reset_index()
+    fig = px.bar(survival_rate, x='defect', y='score',
+                 title='Count of defects')
+    plot_div = to_html(fig, full_html=False)
+    html_content = f"""
+            <html>
+                <head>
+                    <title>Survival Rate Plot</title>
+                </head>
+                <body>
+                    {plot_div}
+                </body>
+            </html>
 
-    return {'welcome': welcome}
+"""
+    return HTMLResponse(content=html_content)
+
 
 @router.get("/contact")
 @router.get("/contact.pt")
