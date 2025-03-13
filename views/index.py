@@ -43,9 +43,20 @@ def description(welcome: str = 'here you will find general description'):
     return {'welcome': welcome}
 
 
-@router.get("/statistic", response_class=HTMLResponse)
-@router.get("/statistic.pt", response_class=HTMLResponse)
+@router.get("/statistic")
+@router.get("/statistic.pt")
 @template()
+def statistic(welcome: str = 'here you will find visualization'):
+    return {
+        'welcome': welcome,
+        'functions': [
+            {'id': 'Plots', 'summary': 'Check whether the details are '
+                                        'defective.'},
+            {'id': 'Diagrams','summary':  'Check where selected details are located'}
+        ]
+    }
+@router.get("/Plots", response_class=HTMLResponse)
+
 async def surival_rate_plotly():
     df = pd.read_csv(os.path.join(Path(os.getcwd()).parent.absolute(),
                                   'Severstal_API', 'stat_loc.csv'), sep=",")
