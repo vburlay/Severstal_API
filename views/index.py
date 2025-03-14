@@ -59,10 +59,12 @@ def statistic(welcome: str = 'here you will find visualization'):
 
 async def surival_rate_plotly():
     df = pd.read_csv(os.path.join(Path(os.getcwd()).parent.absolute(),
-                                  'Severstal_API', 'stat_loc.csv'), sep=",")
-    survival_rate = df.groupby(['defect']).count().reset_index()
-    fig = px.bar(survival_rate, x='defect', y='score',
-                 title='Count of defects')
+                                   'Severstal_API', 'stat_class.csv'), sep=",")
+    df["Defect"] = df["score"].map(lambda x: 'Normal' if x >= 0.5 else 'Defect')
+
+    survival_rate = df[['Defect','id']]
+    fig = px.histogram(survival_rate,x='Defect', color="Defect",
+                 title='Count of defects (Model Classification)')
     plot_div = to_html(fig, full_html=False)
     html_content = f"""
             <html>
@@ -77,7 +79,33 @@ async def surival_rate_plotly():
 """
     return HTMLResponse(content=html_content)
 
+@router.get("/Diagrams", response_class=HTMLResponse)
 
+async def surival_rate_plotly():
+    df1 = pd.read_csv(os.path.join(Path(os.getcwd()).parent.absolute(),
+                                  'Severstal_API', 'stat_loc.csv'), sep=",")[['id','max_pixel','defect']]
+
+
+    df2 = pd.read_csv(os.path.join(Path(os.getcwd()).parent.absolute(),
+                                   'Severstal_API', 'stat_class.csv'), sep=",")[['id','score']]
+
+    df = pd.merge(df1, df2, on='id')
+    survival_rate = df.groupby(['defect']).count().reset_index()
+    fig = px.bar(survival_rate, x='defect', y= 'score' ,color='defect',
+                 title='Count of defects (UNET-Model)', labels={'defect': 'Defect number', 'score':'Count'})
+    plot_div = to_html(fig, full_html=False)
+    html_content = f"""
+            <html>
+                <head>
+                    <title>Survival Rate Plot</title>
+                </head>
+                <body>
+                    {plot_div}
+                </body>
+            </html>
+
+"""
+    return HTMLResponse(content=html_content)
 @router.get("/contact")
 @router.get("/contact.pt")
 @template()
