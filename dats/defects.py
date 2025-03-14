@@ -58,5 +58,5 @@ class defect:
                 self.score.append(np.round(klass[0][0], 2))
                 self.id.append(os.listdir(self.base_dir)[self.file_count - i])
         stat_class = {"id": self.id,"score": self.score}
-        pd.DataFrame(stat_class).to_csv(self.file_stat)
+        pd.DataFrame(stat_class).to_csv(self.file_stat,index=False)
         return self.maintainers
