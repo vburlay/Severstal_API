@@ -5,7 +5,9 @@ import os
 from pathlib import Path
 import pandas as pd
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
+matplotlib.pyplot.switch_backend('Agg')
 from PIL import Image
 
 
@@ -76,9 +78,9 @@ class localization:
                 self.id.append(batches.df.iloc[k, 0])
                 self.score.append(str(mx))
                 self.defect.append(str(dft))
-            stat_loc = {"id": self.id, "score": self.score, "defect":
+            stat_loc = {"id": self.id, "max_pixel": self.score, "defect":
                 self.defect}
-            pd.DataFrame(stat_loc).to_csv(self.file_loc)
+            pd.DataFrame(stat_loc).to_csv(self.file_loc,index=False)
 
             plt.subplots_adjust(wspace=0.2)
 
