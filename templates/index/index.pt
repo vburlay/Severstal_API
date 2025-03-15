@@ -6,7 +6,7 @@
                 <li aria-current="page"><a href="index.pt"><strong>Start
                     page</strong></a></li>
                 <li><a href="/tools"><strong>Functionality</strong></a></li>
-                <li><a href="/statistic"><strong>Statistic</strong></a></li>
+                <li><a href="/plots"><strong>Plots</strong></a></li>
                 <li><a href="/description"><strong>Description</strong></a>
                 </li>
                 <li><a href="/contact"><strong>Contact</strong></a></li>
@@ -59,11 +59,11 @@
 
                 <article class="infobox">
                     <details>
-                        <summary>Statistic</summary>
+                        <summary>Plots</summary>
                         <p id="index4">Descriptive statics shows how much
                             details relates to each defect class.</p>
-                        <p id="index41"><a href="/statistic">To
-                            statistic</a></p>
+                        <p id="index41"><a href="/plots">To
+                            Plots</a></p>
                     </details>
                 </article>
 

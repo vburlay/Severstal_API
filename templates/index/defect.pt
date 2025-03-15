@@ -7,7 +7,7 @@
                     page</strong></a></li>
                 <li aria-current="page"><a
                         href="tools.pt"><strong>Functionality</strong></a></li>
-                <li><a href="/statistic"><strong>Statistic</strong></a></li>
+                <li><a href="/plots"><strong>Plots</strong></a></li>
                 <li><a href="/description"><strong>Description</strong></a>
                 </li>
                 <li><a href="/contact"><strong>Contact</strong></a></li>
@@ -18,7 +18,7 @@
                 <div class="inside_tools">
                     <div class="infobox_tools" tal:repeat="p classification">
                         <div class="title">
-                            <a href="/${p.id}"><strong>${p.id}</strong></a>
+                            <a><strong>${p.id}</strong></a>
                         </div>
                         <div class="infobox_tools">
                             <img style="float:initial" src="${p.path}"
@@ -33,8 +33,6 @@
                     </div>
                 </div>
             </section>
-
-
         </main>
 
     </div>

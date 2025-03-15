@@ -7,7 +7,7 @@
                     page</strong></a></li>
                 <li aria-current="page"><a
                         href="tools.pt"><strong>Functionality</strong></a></li>
-                <li><a href="/statistic"><strong>Statistic</strong></a></li>
+                <li><a href="/plots"><strong>Plots</strong></a></li>
                 <li><a href="/description"><strong>Description</strong></a>
                 </li>
                 <li><a href="/contact"><strong>Contact</strong></a></li>

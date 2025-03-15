@@ -8,7 +8,7 @@
                 <li><a
                         href="/tools"><strong>Functionality</strong></a></li>
                 <li aria-current="page"><a
-                        href="statistic.pt"><strong>Statistic</strong></a></li>
+                        href="plots.pt"><strong>Plots</strong></a></li>
                 <li><a href="/description"><strong>Description</strong></a>
                 </li>
                 <li><a href="/contact"><strong>Contact</strong></a></li>
