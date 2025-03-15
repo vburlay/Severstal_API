@@ -43,10 +43,10 @@ def description(welcome: str = 'here you will find general description'):
     return {'welcome': welcome}
 
 
-@router.get("/statistic")
-@router.get("/statistic.pt")
+@router.get("/plots")
+@router.get("/plots.pt")
 @template()
-def statistic(welcome: str = 'here you will find visualization'):
+def plots(welcome: str = 'here you will find visualization'):
     return {
         'welcome': welcome,
         'functions': [
