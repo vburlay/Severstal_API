@@ -50,9 +50,8 @@ def plots(welcome: str = 'here you will find visualization'):
     return {
         'welcome': welcome,
         'functions': [
-            {'id': 'Plots', 'summary': 'Check whether the details are '
-                                        'defective.'},
-            {'id': 'Diagrams','summary':  'Check where selected details are located'}
+            {'id': 'Plots', 'summary': 'How many defects.'},
+            {'id': 'Diagrams','summary':  'How many class of defects'}
         ]
     }
 @router.get("/Plots", response_class=HTMLResponse)
