@@ -50,11 +50,11 @@ def plots(welcome: str = 'here you will find visualization'):
     return {
         'welcome': welcome,
         'functions': [
-            {'id': 'Plots', 'summary': 'How many defects.'},
-            {'id': 'Diagrams','summary':  'How many class of defects'}
+            {'id': 'Histogram', 'summary': 'How many defects.'},
+            {'id': 'Diagram','summary':  'How many class of defects'}
         ]
     }
-@router.get("/Plots", response_class=HTMLResponse)
+@router.get("/Histogram", response_class=HTMLResponse)
 
 async def surival_rate_plotly():
     df = pd.read_csv(os.path.join(Path(os.getcwd()).parent.absolute(),
@@ -78,7 +78,7 @@ async def surival_rate_plotly():
 """
     return HTMLResponse(content=html_content)
 
-@router.get("/Diagrams", response_class=HTMLResponse)
+@router.get("/Diagram", response_class=HTMLResponse)
 
 async def surival_rate_plotly():
     df1 = pd.read_csv(os.path.join(Path(os.getcwd()).parent.absolute(),
