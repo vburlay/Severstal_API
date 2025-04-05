@@ -1,0 +1,7 @@
+.venv
+.git
+.*ignore
+Dockerfile*
+**/*_test.go
+Makefile
+*.md
