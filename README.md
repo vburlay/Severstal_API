@@ -39,15 +39,15 @@
 - HTML,CSS
 
 ## Screenshots
-- WebAPI
+- **WebAPI**
 
 ![Example screenshot](/static/bilder/api.png)
 
-- Defect-classification
+- **Defect-classification**
 
 ![Example screenshot](/static/bilder/classification.png)
 
-- Localization
+- **Localization**
 
 ![Example screenshot](/static/bilder/localization.png)
 
